@@ -22,3 +22,29 @@ function university_features()
     // register_nav_menu('footerLocationOne', 'Footer Location One');
     // register_nav_menu('footerLocationTwo', 'Footer Location Two');
 }
+
+
+add_action('pre_get_posts', 'university_adjust_queries');
+
+function university_adjust_queries($query)
+{
+    if (!is_admin() && is_post_type_archive('program') && is_main_query()) {
+        $query->set('orderby', 'title');
+        $query->set('order', 'ASC');
+        $query->set('posts_per_page', -1);
+    };
+    if (!is_admin() && is_post_type_archive('event') && is_main_query()) {
+        $query->set('meta_key', 'event_date');
+        $today = date('Ymd');
+        $query->set('order-by', 'meta_value_num');
+        $query->set('order', 'ASC');
+        $query->set('meta_query', array(
+            array(
+                'key'     => 'event_date',
+                'compare' => '>=',
+                'value'   => $today,
+                'type'    => 'numeric'
+            )
+        ));
+    }
+}
