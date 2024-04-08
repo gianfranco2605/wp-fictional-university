@@ -26,7 +26,10 @@
   }
 
   &--orange:hover {
-    background: linear-gradient($lightOrange, scale-color($lightOrange, $lightness: -25%, $saturation: 100%));
+    background: linear-gradient(
+      $lightOrange,
+      scale-color($lightOrange, $lightness: -25%, $saturation: 100%)
+    );
   }
 
   &--dark-orange {
@@ -34,7 +37,10 @@
   }
 
   &--dark-orange:hover {
-    background: linear-gradient($darkOrange, scale-color($darkOrange, $lightness: -35%, $saturation: 100%));
+    background: linear-gradient(
+      $darkOrange,
+      scale-color($darkOrange, $lightness: -35%, $saturation: 100%)
+    );
   }
 
   &--blue {
@@ -42,7 +48,10 @@
   }
 
   &--blue:hover {
-    background: linear-gradient(scale-color($mainBlue, $lightness: 11%), $mainBlue);
+    background: linear-gradient(
+      scale-color($mainBlue, $lightness: 11%),
+      $mainBlue
+    );
   }
 
   &--yellow {
@@ -51,7 +60,10 @@
   }
 
   &--yellow:hover {
-    background: linear-gradient($mainYellow, scale-color($mainYellow, $lightness: -29%, $saturation: 100%));
+    background: linear-gradient(
+      $mainYellow,
+      scale-color($mainYellow, $lightness: -29%, $saturation: 100%)
+    );
   }
 
   &--beige {
